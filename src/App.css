@@ -1,22 +1,94 @@
-.App {
+:root {
+  --link-color: #000;
+  --main-title-font: "Georgia", Times, serif;
+  --main-price-font: "Georgia", Times, serif;
+  --secondary-price-font: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+html,
+body {
+    height:100%;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+  color: var(--link-color);
+}
+
+a {
+  font-weight: bold;
+}
+
+a:hover {
+  border-bottom: 1px solid var(--link-color);
+}
+
+.app {
   text-align: center;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
-.App-logo {
-  height: 80px;
+.app-header {
+  display: flex;
+  flex-wrap: nowrap;
+  height: 70px;
+  width: 100%;
+  padding: 0.5em 0 0.5em 0;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.app-header a {
+  font-size: 0.75em;
+  position:relative;
+  padding: 0.5em 0 0.5em 0;
 }
 
-.App-title {
-  font-size: 1.5em;
+.logo-container {
+  width: 20%;
+  text-align: left;
 }
 
-.App-intro {
-  font-size: large;
+.logo {
+  height: 70px;
+}
+
+.menu-container,
+.cart-link-container {
+  padding: 1.7em 0 1.5em 0;
+}
+
+.menu-container {
+  width: 60%;
+}
+
+.menu-container > ul {
+    margin: 0;
+}
+
+.menu-container > ul > li {
+  float:center;
+  list-style:none;
+  margin: 0 1.5em 0 1.5em;
+  display:inline-block;
+}
+
+.dropdown {
+  margin-right: 2.5em !important;
+}
+
+.dropdown i {
+  position:absolute;
+  top: 0.8em;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid var(--link-color);
+  margin-left: 0.75em;
+}
+
+.cart-link-container {
+  width: 20%;
+  margin: 0;
 }

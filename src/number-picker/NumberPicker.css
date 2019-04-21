@@ -1,0 +1,53 @@
+.number-picker-container {
+  display: flex;
+  flex-wrap: nowrap;
+  height: 40px;
+}
+
+.number-picked {
+  width: 39px;
+  height: 40px;
+  background-color: #ddd;
+  text-align: center;
+  line-height: 40px;
+  margin-right: 2px;
+}
+
+.number-changers-container {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: space-between;
+  width:19px;
+  margin-right: 5px;
+}
+
+.number-changer {
+  width: 19px;
+  height:19px;
+  background-color: #aaa;
+  text-align: center;
+  line-height: 19px;
+}
+
+.number-changer:hover {
+  cursor: pointer;
+}
+
+.bulk-add-button {
+  width: 150px;
+  height: 38px;
+  line-height: 40px;
+  border: solid 1px #000;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  letter-spacing: 2px;
+  font-weight: bold;
+  font-size: 0.8em;
+}
+
+.number-changer:hover,
+.bulk-add-button:hover {
+  cursor: pointer;
+}
