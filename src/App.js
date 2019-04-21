@@ -55,9 +55,9 @@ class App extends Component {
               <li className="dropdown">
                 <Link to="/" className="trigger-drop">SHOP<i></i></Link>
               </li>
-              <li><a href="#">JOURNAL</a></li>
+              <li><Link to="/">JOURNAL</Link></li>
               <li className="dropdown">
-                <a href="#" className="trigger-drop">MORE<i></i></a>
+                <Link to="/" className="trigger-drop">MORE<i></i></Link>
               </li>
             </ul>
           </nav>

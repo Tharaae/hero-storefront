@@ -27,12 +27,15 @@ class Category extends Component {
 
     return (
       <div>
-        <div className="category-header">
-          <div className="category-title-container">
-            <h1>{category.name}</h1>
-            <p>{category.description}</p>
+        {category &&
+          <div className="category-header">
+            <div className="category-title-container">
+              <h1>{category.name}</h1>
+              <p>{category.description}</p>
+            </div>
           </div>
-        </div>
+        }
+        
         <div className="products-grid">
           {
             products.map((product) => (

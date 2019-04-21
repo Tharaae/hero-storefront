@@ -12,7 +12,6 @@ class CartPopup extends Component {
     super();
 
     this.openCartPopup = this.openCartPopup.bind(this);
-    this.afterOpenCartPopup = this.afterOpenCartPopup.bind(this);
     this.closeCartPopup = this.closeCartPopup.bind(this);
     this.handleClick = this.handleClick.bind(this);
   }
@@ -24,13 +23,6 @@ class CartPopup extends Component {
   openCartPopup() {
     this.setState({isPopupOpen: true});
     document.addEventListener('mousedown', this.handleClick, false);
-  }
-
-  /*
-   * Called right after modal is opened.
-   * It populates madal elements with data fetched asynchronously.
-   */
-  afterOpenCartPopup() {
   }
 
   /*
@@ -51,7 +43,7 @@ class CartPopup extends Component {
 
   render() {
     const {isPopupOpen} = this.state;
-    const {cartItems, addToCart, removeFromCart} = this.props;
+    const {cartItems, removeFromCart} = this.props;
 
     let totalItems = 0;
     let totalPrice = 0;

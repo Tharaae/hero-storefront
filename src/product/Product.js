@@ -6,15 +6,18 @@ import './Product.css';
 class Product extends Component {
 
   render() {
-    const {mode, addToCart, match} = this.props;
+    const {mode, addToCart, location} = this.props;
     let {product} = this.props;
 
     if(!product) {
-      if(match) {
-        product = this.props.location.state.product;
+      if(location && location.state && location.state.product) {
+        product = location.state.product;
+      } else {
+        product = null;
       }
     }
 
+    if (product) {
     return (
         <div className={mode === 'grid'? 'product-grid-item' : 'product-page'}>
           {mode === 'grid' &&
@@ -66,6 +69,14 @@ class Product extends Component {
           }
         </div>
     );
+  } else {
+    return (
+      <div>
+        <h3>Invalid Link</h3>
+        <p> Please go to <Link to="/">Home Page</Link></p>
+      </div>
+    );
+  }
   }
 }
 
