@@ -17,6 +17,7 @@ class NumberPicker extends Component {
   // Prop types are checked to ensure that
   // the correct types are passed from parent component
   static propTypes = {
+    numberSelected: PropTypes.number,
     handleNumberIncrement: PropTypes.func,
     handleNumberDecrement: PropTypes.func,
     handleBulkAction: PropTypes.func,
@@ -32,7 +33,9 @@ class NumberPicker extends Component {
     super(props);
 
     //initializing selected number state by the initial value passed as prop
-    this.state.numberSelected = this.props.numberSelected;
+    if(this.props.numberSelected) { //if initial value passed
+      this.state.numberSelected = this.props.numberSelected;
+    }
 
     this.increment = this.increment.bind(this);
     this.decrement = this.decrement.bind(this);

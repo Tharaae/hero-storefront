@@ -30,9 +30,11 @@ supplied JSON and media files. The `products.json` file is accessed asynchronous
 * The UI currently properly responsive on screens bigger than or equal to **860 px** wide. If I had more time, I would use CSS media queries for a fully responsive app on smaller screens and mobile version.
 * Would make sure that WCAG standards are sufficiently applied to ensure high web accessability.
 * Would implement sample sub-menu in the navigation bar.
-* Would add more functionalities to the _Number Picker_ component to be more reusable for other applications. For example, minimum/maximum numbers settings and custom styles settings.
+* Would add more functionalities to the _NumberPicker_ component to be more reusable for other applications. For example, minimum/maximum numbers settings and custom styles settings.
 * Would add a feature of going to the Product Details page when the product title in the Shopping Cart page or cart popup is clicked (as a link).
-* Would create more unit tests to cover more of the code.
+* Would create more unit tests to cover more of the code. Currently, only the following unit tests are created:
+  * Thorough unit testing of **_NumberPicker_** component
+  * Few basic rendering unit tests of _App_, _Category_ and _Product_ components. 
 
 
 ## How To Run the App
