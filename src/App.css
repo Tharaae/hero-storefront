@@ -1,3 +1,5 @@
+/* General Styles used all over the store */
+/*----------------------------------------*/
 :root {
   --link-color: #000;
   --main-title-font: "Georgia", Times, serif;
@@ -30,6 +32,17 @@ a:hover {
   margin-right: 5%;
 }
 
+.error-page h3 {
+  color: #aaa;
+  font-size: 1.5em;
+}
+
+.error-page a {
+  padding-bottom: 0.5em;
+}
+
+/* App Header Styles */
+/*-------------------*/
 .app-header {
   display: flex;
   flex-wrap: nowrap;

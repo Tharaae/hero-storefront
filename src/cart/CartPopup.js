@@ -1,10 +1,23 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import Modal from 'react-modal';
 import './Cart.css';
 
+/*
+ * Cart Popup state component linked on the main header throughout the app.
+ * Implemented using Modal component from react-modal package.
+ */
 class CartPopup extends Component {
+  // Prop types are checked to ensure that
+  // the correct types are passed from parent component
+  static propTypes = {
+    cartItems: PropTypes.array.isRequired,
+    removeFromCart: PropTypes.func.isRequired
+  }
+
   state = {
+    //holds the popup state (open or closed)
     isPopupOpen: false
   }
 
@@ -16,25 +29,26 @@ class CartPopup extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  /*
-   * Called when modal is attempted to be opened.
-   * It sets the state to rerender accordingly.
-   */
+  /* Called when modal is attempted to be opened */
   openCartPopup() {
+    //sets the state to rerender accordingly
     this.setState({isPopupOpen: true});
+    //add event listner to detect any mouse click to close the modal if click is outside it
     document.addEventListener('mousedown', this.handleClick, false);
   }
 
-  /*
-  * Called when the madal is attempted to bet closed.
-  * It sets the state to rerender accordingly.
-  */
+  /* Called when the madal is attempted to bet closed */
  closeCartPopup() {
+   //sets the state to rerender accordingly
    this.setState({isPopupOpen: false});
+   //remove mouse event listner added when modal was open
    document.removeEventListener('mousedown', this.handleClick, false);
  }
 
+ /* Called by mouse event listener when mouse click detected */
  handleClick(e) {
+   //if click is outside the modal div or My Cart link (which already closes popup if it's open),
+   //then close the popup
    if (!document.getElementsByClassName('cart-popup-container')[0].contains(e.target)
       && !document.getElementsByClassName('popup-open-link')[0].contains(e.target)){
      this.closeCartPopup();
@@ -43,8 +57,12 @@ class CartPopup extends Component {
 
   render() {
     const {isPopupOpen} = this.state;
+
+    //retrieve cart items arry and removeFromCart method
+    //passed as props from parent App component
     const {cartItems, removeFromCart} = this.props;
 
+    //get cart summary info
     let totalItems = 0;
     let totalPrice = 0;
     for(const item of cartItems) {
@@ -54,12 +72,14 @@ class CartPopup extends Component {
 
     return (
       <div className="cart-main-container">
+        {/*  Renders My Cart link */}
         <a
           onClick={isPopupOpen? this.closeCartPopup : this.openCartPopup}
           className={isPopupOpen? 'popup-open-link' : 'popup-closed-link'}>
           MY CART {totalItems > 0? `(${totalItems})` : ''}<i></i>
         </a>
 
+        {/*  Renders Popup Cart Modal */}
         <Modal
           isOpen={this.state.isPopupOpen}
           onAfterOpen={this.afterOpenCartPopup}
@@ -67,6 +87,7 @@ class CartPopup extends Component {
           overlayClassName="cart-popup-overlay"
           className="cart-popup-container"
           contentLabel="My Cart"
+          ariaHideApp={false}
         >
           {totalItems === 0 &&
             <div className="cart-empty" >

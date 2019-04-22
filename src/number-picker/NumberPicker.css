@@ -34,7 +34,7 @@
   cursor: pointer;
 }
 
-.bulk-add-button {
+.bulk-action-button {
   width: 150px;
   height: 38px;
   line-height: 40px;
@@ -48,6 +48,6 @@
 }
 
 .number-changer:hover,
-.bulk-add-button:hover {
+.bulk-action-button:hover {
   cursor: pointer;
 }

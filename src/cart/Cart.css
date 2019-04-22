@@ -1,3 +1,6 @@
+/* Popup Cart Styles */
+/*-------------------*/
+
 .popup-open-link {
   border-bottom: 1px solid var(--link-color);
 }
@@ -174,7 +177,10 @@
   cursor: pointer;
 }
 
-/** Cart Page Styles **/
+
+/* Shopping Cart Page Styles */
+/*---------------------------*/
+/* Note: Some Cart Popup styles are used in Shopping Cart Page. */
 
 .cart-page-container {
   width: 100%;
